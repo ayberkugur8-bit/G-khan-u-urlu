@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050b14">
+<meta name="description" content="Uğurlu Halı Yıkama ve Araba Yıkama - Antakya / Hatay">
+<title>Uğurlu | Halı Yıkama & Araba Yıkama</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:#050910;color:#f5f7fb;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,9,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(30,154,255,.18)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:22px;font-weight:900;letter-spacing:1px}
+.logo span{color:#159cff}
+.logo small{display:block;font-size:8px;letter-spacing:2px;color:#9ba8b8;margin-top:-4px}
+nav{display:flex;gap:28px;color:#b8c3d1;font-size:13px;font-weight:600}
+nav a:hover{color:#159cff}
+.navbtn{padding:11px 18px;border:1px solid #159cff;border-radius:30px;color:#fff;font-weight:700;font-size:13px}
+.hero{min-height:760px;padding-top:76px;display:flex;align-items:center;position:relative;overflow:hidden;background:
+radial-gradient(circle at 78% 42%,rgba(21,156,255,.20),transparent 32%),
+radial-gradient(circle at 20% 80%,rgba(19,74,140,.18),transparent 35%),
+linear-gradient(120deg,#03070d 0%,#071321 52%,#02070d 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,7,13,.98) 0%,rgba(3,7,13,.86) 45%,rgba(3,7,13,.3) 100%);pointer-events:none}
+.hero:after{content:"";position:absolute;width:600px;height:600px;border-radius:50%;right:-180px;top:80px;border:1px solid rgba(21,156,255,.15);box-shadow:0 0 100px rgba(21,156,255,.08)}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(21,156,255,.35);background:rgba(21,156,255,.08);padding:8px 14px;border-radius:30px;color:#7fcaff;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.badge i{width:7px;height:7px;border-radius:50%;background:#159cff;box-shadow:0 0 12px #159cff}
+h1{font-size:clamp(48px,8vw,88px);line-height:.96;letter-spacing:-4px;margin:25px 0 20px;font-weight:900}
+h1 span{color:#159cff}
+.hero p{font-size:17px;color:#aeb9c7;max-width:620px}
+.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:12px;font-weight:800;font-size:14px;transition:.25s}
+.primary{background:#159cff;color:#fff;box-shadow:0 10px 30px rgba(21,156,255,.22)}
+.primary:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(21,156,255,.35)}
+.secondary{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04)}
+.secondary:hover{border-color:#159cff}
+section{padding:95px 0}
+.section-head{margin-bottom:38px}
+.kicker{font-size:11px;letter-spacing:3px;color:#159cff;font-weight:900;text-transform:uppercase}
+h2{font-size:clamp(30px,5vw,48px);line-height:1.05;margin-top:9px;letter-spacing:-1.5px}
+.muted{color:#9caaba}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{position:relative;overflow:hidden;min-height:330px;padding:32px;border:1px solid rgba(255,255,255,.09);border-radius:24px;background:linear-gradient(145deg,#0b1522,#07101a);transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:rgba(21,156,255,.55);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.card .icon{font-size:38px;margin-bottom:18px}
+.card h3{font-size:26px;margin-bottom:10px}
+.card p{color:#aab6c5;max-width:500px}
+.card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;bottom:-80px;background:rgba(21,156,255,.11);filter:blur(3px)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.feature{padding:25px;border-radius:18px;background:#08111c;border:1px solid rgba(255,255,255,.07)}
+.feature strong{display:block;margin-bottom:5px}
+.feature span{font-size:13px;color:#8e9baa}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.about-box{border-radius:28px;padding:38px;background:linear-gradient(145deg,#0a1725,#050a10);border:1px solid rgba(21,156,255,.22);box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.owner{margin-top:25px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between}
+.contact{background:linear-gradient(135deg,#06101c,#091a2a);border-top:1px solid rgba(21,156,255,.15);border-bottom:1px solid rgba(21,156,255,.15)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.contact-card{padding:32px;border-radius:22px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.08)}
+.info{display:flex;gap:15px;margin:20px 0}
+.info-icon{width:44px;height:44px;border-radius:12px;background:rgba(21,156,255,.12);display:grid;place-items:center;color:#159cff;font-size:20px;flex:none}
+.info b{display:block}.info span{color:#a7b3c1;font-size:14px}
+.map{min-height:100%;display:flex;align-items:center;justify-content:center;border-radius:22px;border:1px solid rgba(21,156,255,.2);background:
+linear-gradient(rgba(5,13,23,.86),rgba(5,13,23,.9)),
+repeating-linear-gradient(25deg,transparent 0 25px,rgba(21,156,255,.06) 26px 27px),
+repeating-linear-gradient(115deg,transparent 0 35px,rgba(255,255,255,.04) 36px 37px)}
+.map-pin{font-size:55px;text-align:center}.map small{display:block;color:#aebbd0;margin-top:5px}
+footer{padding:30px 0;color:#7f8b9a;font-size:12px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-flex{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.float{position:fixed;right:20px;bottom:20px;z-index:99;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#16c76a;color:white;font-size:27px;box-shadow:0 10px 30px rgba(22,199,106,.3)}
+@media(max-width:800px){
+nav{display:none}.navbtn{padding:9px 13px}.hero{min-height:700px}.hero-content{padding-top:40px}
+.cards,.about,.contact-grid{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}
+section{padding:70px 0}h1{letter-spacing:-2px}
+}
+@media(max-width:480px){.features{grid-template-columns:1fr}.hero p{font-size:15px}.card{min-height:260px}.footer-flex{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="logo" href="#anasayfa">UĞURLU <span>●</span><small>HALI YIKAMA & ARABA YIKAMA</small></a>
+<nav><a href="#anasayfa">Ana Sayfa</a><a href="#hizmetler">Hizmetler</a><a href="#hakkimizda">Hakkımızda</a><a href="#iletisim">İletişim</a></nav>
+<a class="navbtn" href="tel:+905373126659">☎ +90 537 312 66 59</a>
+</div>
+</header>
+
+<main>
+<section class="hero" id="anasayfa">
+<div class="container hero-content">
+<div class="badge"><i></i> Antakya / Hatay'da Profesyonel Temizlik</div>
+<h1>Temizliğin<br><span>UĞURLU</span> Adresi.</h1>
+<p>Halılarınız ve araçlarınız için özenli, profesyonel ve kaliteli temizlik hizmeti. İşini titizlikle yapan Uğurlu ile temizliğin farkını yaşayın.</p>
+<div class="buttons">
+<a class="btn primary" href="#hizmetler">Hizmetlerimizi İncele →</a>
+<a class="btn secondary" href="https://wa.me/905373126659?text=Merhaba%20U%C4%9Furlu%20Hali%20Y%C4%B1kama%20ve%20Araba%20Y%C4%B1kama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">WhatsApp'tan Ulaş</a>
+</div>
+</div>
+</section>
+
+<section id="hizmetler">
+<div class="container">
+<div class="section-head"><div class="kicker">Hizmetlerimiz</div><h2>Aracınızdan halınıza,<br>temizlikte kalite.</h2></div>
+<div class="cards">
+<div class="card"><div class="icon">🧼</div><h3>Halı Yıkama</h3><p>Halılarınızın derinlemesine temizlenmesi için özenli yıkama hizmeti sunuyoruz. Temiz, ferah ve bakımlı halılar için Uğurlu kalitesi.</p><div class="buttons"><a class="btn primary" href="tel:+905373126659">Bilgi Al →</a></div></div>
+<div class="card"><div class="icon">🚘</div><h3>Araba Yıkama</h3><p>Aracınızın iç ve dış temizliğini titizlikle yapıyor, temiz ve parlak bir görünüm için detaylara önem veriyoruz.</p><div class="buttons"><a class="btn primary" href="tel:+905373126659">Randevu Al →</a></div></div>
+</div>
+<div class="features" style="margin-top:20px">
+<div class="feature"><strong>✓ Özenli Hizmet</strong><span>Her işlemde detaylara dikkat.</span></div>
+<div class="feature"><strong>◆ Kaliteli Temizlik</strong><span>Temizlikte profesyonel yaklaşım.</span></div>
+<div class="feature"><strong>◷ Zamanında Hizmet</strong><span>Planlı ve düzenli çalışma.</span></div>
+<div class="feature"><strong>★ Müşteri Odaklı</strong><span>Memnuniyet önceliğimiz.</span></div>
+</div>
+</div>
+</section>
+
+<section id="hakkimizda">
+<div class="container about">
+<div>
+<div class="kicker">Hakkımızda</div>
+<h2>Uğurlu Halı Yıkama<br>& Araba Yıkama</h2>
+<p class="muted" style="margin-top:20px">Müşterilerimize kaliteli temizlik hizmeti sunmak için özenli ve güvenilir bir çalışma anlayışıyla hizmet veriyoruz. Halılarınızın ve araçlarınızın temizliğinde işimizi titizlikle yapıyoruz.</p>
+<div class="owner"><span class="muted">İşletme Sahibi</span><strong>Gökhan Uğur</strong></div>
+</div>
+<div class="about-box"><div class="kicker">Güven • Kalite • Temizlik</div><h2 style="font-size:34px">Temiz bir yaşam alanı, temiz bir araç.</h2><p class="muted" style="margin-top:15px">Uğurlu ile temizlik işini şansa bırakmayın.</p></div>
+</div>
+</section>
+
+<section class="contact" id="iletisim">
+<div class="container">
+<div class="section-head"><div class="kicker">Bize Ulaşın</div><h2>Hemen iletişime geçin.</h2></div>
+<div class="contact-grid">
+<div class="contact-card">
+<div class="info"><div class="info-icon">☎</div><div><b>Telefon</b><span>+90 537 312 66 59</span></div></div>
+<div class="info"><div class="info-icon">⌖</div><div><b>Adres</b><span>Akasya Mahallesi M. Kafadar Caddesi 106/A<br>Yeni SGK Binası Karşısı<br>Antakya / HATAY</span></div></div>
+<div class="buttons"><a class="btn primary" href="tel:+905373126659">Hemen Ara</a><a class="btn secondary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Akasya+Mahallesi+M.Kafadar+Caddesi+106%2FA+Antakya+Hatay">Yol Tarifi Al ↗</a></div>
+</div>
+<div class="map"><div class="map-pin">📍<small>Uğurlu Halı Yıkama<br>ve Araba Yıkama</small></div></div>
+</div>
+</div>
+</section>
+</main>
+
+<a class="float" target="_blank" aria-label="WhatsApp" href="https://wa.me/905373126659?text=Merhaba%2C%20bilgi%20almak%20istiyorum.">◔</a>
+<footer><div class="container footer-flex"><div><strong style="color:#fff">UĞURLU</strong> — Halı Yıkama & Araba Yıkama</div><div>© 2026 Uğurlu. Tüm hakları saklıdır.</div></div></footer>
+</body>
+</html>
